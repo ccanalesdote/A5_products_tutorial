@@ -1,0 +1,9 @@
+{
+    "require": {
+        "slim/slim": "^3.9.0",
+        "catfan/Medoo": "^1.4"
+    },
+    "autoload": {
+        "classmap": ["piramide-uploader"]
+    }
+}
