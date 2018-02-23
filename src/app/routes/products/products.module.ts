@@ -17,7 +17,7 @@ const routes: Routes = [
         RouterModule.forChild(routes),
         CommonModule,
         FormsModule,
-        ImageCropperModule     
+        ImageCropperModule
     ],
     declarations: [
         ProductsListComponent,

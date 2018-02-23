@@ -64,6 +64,13 @@ $app->get('/get_producto/{id_producto}', function(Request $request, Response $re
     echo json_encode($data);
 });
 
+$app->get('/delete_producto/{id_producto}', function(Request $request, Response $response){
+    global $database;    
+    $id_producto = $request->getAttribute('id_producto');
+    $data = $database->delete("productos", ["id" => $id_producto]);
+    echo json_encode($data);
+});
+
 $app->post('/upload', function(Request $request, Response $response){
     global $database;
 

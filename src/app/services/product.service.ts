@@ -42,6 +42,10 @@ export class ProductService {
             .map(res => res.json());
     }
 
+    deleteProduct(id) {
+        return this._http.get(this.url + 'delete_producto/' + id).map(res => res.json());
+    }
+
     makeFileRequest(url: string, params: Array<string>, files: Array<File>) {
         return new Promise((resolve, reject) => {
             var formData: any = new FormData();
