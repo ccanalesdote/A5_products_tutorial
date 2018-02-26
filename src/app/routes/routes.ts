@@ -1,5 +1,7 @@
 import { LayoutComponent } from '../layout/layout.component';
 
+import { LoginComponent } from './pages/login/login.component';
+
 export const routes = [
 
     {
@@ -14,7 +16,10 @@ export const routes = [
         ]
     },
 
+    // 
+    { path: 'login', component: LoginComponent },
+
     // Not found
-    { path: '**', redirectTo: 'error' }
+    { path: '**', redirectTo: 'error' }    
 
 ];
