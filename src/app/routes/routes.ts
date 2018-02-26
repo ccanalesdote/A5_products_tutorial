@@ -12,7 +12,9 @@ export const routes = [
             { path: 'home', loadChildren: './home/home.module#HomeModule' },
             { path: 'inicio', loadChildren: './inicio/inicio.module#InicioModule' },
             { path: 'products', loadChildren: './products/products.module#ProductsModule' },
-            { path: 'error', loadChildren: './extras/extras.module#ExtrasModule' }
+            { path: 'tutorial', loadChildren: './tutorial/tutorial.module#TutorialModule' },
+            { path: 'error', loadChildren: './extras/extras.module#ExtrasModule' },
+            { path: 'file', loadChildren: './filemanager/filemanager.module#FileManagerModule' },
         ]
     },
 

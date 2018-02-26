@@ -77,10 +77,7 @@ export class ProductsListComponent {
                     'El registro fue eliminado correctamente.',
                     'success'
                 )
-            } else if (
-                // Read more about handling dismissals
-                result.dismiss === swal.DismissReason.cancel
-            ) {
+            } else {
                 swal(
                     'Cancelado',
                     'No se ha eliminado el registro :)',

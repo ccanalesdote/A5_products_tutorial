@@ -7,6 +7,11 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { HttpModule } from '@angular/http';
 
+//Angular Firestore
+import { environment } from '../environments/environment';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+
 import { AppComponent } from './app.component';
 
 import { CoreModule } from './core/core.module';
@@ -37,7 +42,9 @@ export function createTranslateLoader(http: HttpClient) {
                 useFactory: (createTranslateLoader),
                 deps: [HttpClient]
             }
-        })
+        }),
+        AngularFireModule.initializeApp(environment.firebase, 'file-manager'),
+        AngularFirestoreModule
     ],
     providers: [],
     bootstrap: [AppComponent]
