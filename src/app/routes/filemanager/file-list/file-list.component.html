@@ -1,3 +1,15 @@
-<p>
-  file-list works!
-</p>
+<div *ngIf="items?.length > 0;else noItems">
+	<ul *ngFor="let item of items">
+		<li>
+			<strong>{{item.title}}</strong>
+			{{item.description}}
+		</li>
+	</ul>
+</div>
+
+
+
+<ng-template #noItems>
+	<hr>
+	<h5>No hay items en la colección</h5>
+</ng-template>
