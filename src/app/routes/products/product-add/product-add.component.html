@@ -47,8 +47,9 @@
                     </fieldset>
                     <!-- <fieldset>
                 <div class="col-md-4">
-                    <label class="custom-file-upload">
-                        <input name="imagen" id="image-input" type="file" (change)="fileChangeListener($event)"> Seleccione Imagen
+                    <label for="image-input" class="file-upload">
+                        <button class="btn btn-default btn-block">Seleccione Imagen</button>
+                        <input name="imagen" id="image-input" type="file" (change)="fileChangeListener($event)">
                     </label>
                     <p class="pv">Tipo de Recorte:</p>
                     <div class="btn-group btn-group-justified mb">

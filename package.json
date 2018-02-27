@@ -36,6 +36,7 @@
     "@swimlane/ngx-datatable": "11.1.2",
     "ag-grid": "14.2.0",
     "ag-grid-angular": "14.2.0",
+    "angular-pipes": "^6.5.3",
     "angular-tree-component": "6.0.0",
     "angular2-text-mask": "8.0.4",
     "angular2-toaster": "4.0.1",

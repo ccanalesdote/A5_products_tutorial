@@ -15,17 +15,19 @@ require 'vendor/autoload.php';
 use Medoo\Medoo;
 
 // Initialize
-$database = new Medoo([
+$database = new Medoo(
+    [
     'database_type' => 'mysql',
     'database_name' => 'pixel_seed_db',
     'server' => 'localhost',
     'username' => 'root',
     'password' => ''
-]);
+    ]
+);
 
 $app = new \Slim\App;
 
-$app->post('/productos', function(Request $request, Response $response){
+$app->post('/productos', function (Request $request, Response $response) {
     global $database;
     //$json = $app->request->post('json');    
     $json = $_POST['json'];    
@@ -103,6 +105,54 @@ $app->post('/upload', function(Request $request, Response $response){
                 'filename' => $file_name
             );
         }
+    }
+
+    echo json_encode($result);
+});
+
+$app->post('/uploadFile', function(Request $request, Response $response){    
+    error_reporting(E_ALL);
+    ini_set('display_errors', '1');
+
+    $result = array(
+        'status' => 'error',
+        'code' => 404,
+        'message' => 'No se puede subir'
+    );
+
+    if(isset($_FILES['uploads'])){
+        $file = $_FILES['uploads'];
+        $directory = 'uploads';
+        $nombre = "file_" . time() . "_" . $file["name"][0];
+
+        if(!is_dir($directory)){
+            $dir = mkdir($directory, 0777, true);
+        }else{
+            $dir = true;
+        }
+        
+        if($dir){
+            $mpf = move_uploaded_file($file["tmp_name"][0], $directory . "/" . $nombre);
+    
+            if($mpf){
+                $uploaded = true;
+            }else{
+                $uploaded = false;
+                $error = "The file has not moved";
+            }
+        }else{
+            $upload = false;
+            $error = "The directory does not exist";
+        }
+
+        if($uploaded) {
+            $result = array(
+                'status' => 'success',
+                'code' => 200,
+                'message' => 'Se subio el archivo',
+                'filename' => $nombre
+            );
+        }        
     }
 
     echo json_encode($result);

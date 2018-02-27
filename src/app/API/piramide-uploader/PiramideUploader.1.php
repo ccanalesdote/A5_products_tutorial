@@ -18,9 +18,6 @@ class PiramideUploader {
 			"error"			=> $_FILES["$file"]["error"]
 		);
 
-		print_r($file);
-		exit;
-
 		if ($force_name != NULL) {
 			$this->info_file["complete_name"] = $name;
 		}
@@ -72,5 +69,3 @@ class PiramideUploader {
 	}
 
 }
-
-?>
