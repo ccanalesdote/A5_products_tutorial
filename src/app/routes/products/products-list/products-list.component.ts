@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+
 import { ProductService } from '../../../services/product.service';
 import { Product } from '../../../models/product'
+import { GLOBAL } from '../../../services/global';
 
 //const swal = require('sweetalert');
 import swal from 'sweetalert2';
@@ -15,16 +17,18 @@ export class ProductsListComponent {
     public titulo: string;
     public productos: Product[];
     public imagen_seleccionada: string;
+    public url: string;
 
     constructor(
         private _productService: ProductService
     ) {
         this.titulo = 'Listado de Productos';
         this.imagen_seleccionada = 'noimage.png';
+        this.url = GLOBAL.source;
     }
 
     ngOnInit() {
-        console.log('Se ha cargado el componente <ProductsListComponent>');
+        console.log('Se ha cargado el componente <ProductsListComponent>');        
         this.getProducts();
     }
 

@@ -18,7 +18,7 @@ use Medoo\Medoo;
 $database = new Medoo(
     [
     'database_type' => 'mysql',
-    'database_name' => 'pixel_seed_db',
+    'database_name' => 'prueba_db',
     'server' => 'localhost',
     'username' => 'root',
     'password' => ''

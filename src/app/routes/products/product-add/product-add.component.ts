@@ -20,6 +20,7 @@ export class ProductAddComponent {
     public resultUpload;
     public is_edit: boolean;
     public imagen_seleccionada: string;
+    public url: string;
     data1: any;
     cropperSettings: CropperSettings;
 
@@ -36,6 +37,7 @@ export class ProductAddComponent {
         this.filesToUpload = [];
         this.is_edit = false;
         this.cropperSettings = new CropperSettings();
+        this.url = GLOBAL.source;
 
         this.cropperSettings.noFileInput = true;
 
